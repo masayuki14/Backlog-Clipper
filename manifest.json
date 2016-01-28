@@ -1,0 +1,14 @@
+{
+  "name": "backlog_to_md_li",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "開いてるBacklogの課題からmd形式のlistタグを生成する",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
