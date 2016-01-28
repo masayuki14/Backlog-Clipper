@@ -1,8 +1,12 @@
 var key = $("div#issuecard div.key strong").text()
+
 var title = $("div#issuecard h4.summary").text()
+var spChars = { '[': '(', ']': ')' };
+var titleEscaped = title.replace(/[\[\]]/g, function(c) { return spChars[c] })
+
 var url = window.location.href
 
-var text = '- [ ][' + key + ' ' + title + '](' + url+ ')'
+var text = '- [ ][' + key + ' ' + titleEscaped + '](' + url+ ')'
 
 saveToClipboard(text)
 
