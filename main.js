@@ -5,6 +5,8 @@ var spChars = { '[': '(', ']': ')' };
 var titleEscaped = title.replace(/[\[\]]/g, function(c) { return spChars[c] })
 
 var url = window.location.href
+var hashIndex = url.indexOf('#')
+if (hashIndex != -1) url = url.substr(0, hashIndex)
 
 var text = '- [ ][' + key + ' ' + titleEscaped + '](' + url+ ')'
 
