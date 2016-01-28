@@ -1,14 +1,18 @@
 {
-  "name": "backlog_to_md_li",
+  "name": "Backlog Clipper",
   "version": "0.1",
   "manifest_version": 2,
   "description": "開いてるBacklogの課題からmd形式のlistタグを生成する",
+
+  "permissions": [
+    "tabs", "https://*.backlog.jp/"
+  ],
 
   "browser_action": {
     "default_icon": "icon.png"
   },
 
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["background.js"]
   }
 }
