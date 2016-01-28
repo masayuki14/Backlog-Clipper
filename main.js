@@ -2,7 +2,7 @@ var key = $("div#issuecard div.key strong").text()
 var title = $("div#issuecard h4.summary").text()
 var url = window.location.href
 
-var text = ' - [ ][' + key + ' ' + title + '](' + url+ ')'
+var text = '- [ ][' + key + ' ' + title + '](' + url+ ')'
 
 saveToClipboard(text)
 
