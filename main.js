@@ -6,16 +6,15 @@ var text = ' - [ ][' + key + ' ' + title + '](' + url+ ')'
 
 saveToClipboard(text)
 
-function saveToClipboard(str) {
-  // copy 用に textareaを作る
-  var textArea = document.createElement("textarea");
-  textArea.style.cssText = "position:absolute;left:-100%";
+function saveToClipboard(text) {
+  var textArea = document.createElement("textarea")
+  textArea.style.cssText = "position:absolute;left:-100%"
 
-  document.body.appendChild(textArea);
+  document.body.appendChild(textArea)
 
-  textArea.value = str;
-  textArea.select();
-  document.execCommand("copy");
+  textArea.value = text
+  textArea.select()
+  document.execCommand("copy")
 
-  document.body.removeChild(textArea);
+  document.body.removeChild(textArea)
 }
