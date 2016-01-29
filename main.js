@@ -12,6 +12,19 @@ var text = '- [ ][' + key + ' ' + titleEscaped + '](' + url + ')'
 
 saveToClipboard(text)
 
+$.notifyBar({
+  html: 'クリップボードにコピーしました ' + text,
+  cssClass: 'flash_message'
+})
+
+$('.flash_message').css({
+  'color': 'white',
+  'background': '#e74c3c',
+  'text-align': 'center',
+  'line-height': '3em',
+  'font-weight': 'bold'
+})
+
 function saveToClipboard(text) {
   var textArea = document.createElement('textarea')
   textArea.style.cssText = 'position:absolute;left:-100%'
