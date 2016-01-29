@@ -1,11 +1,15 @@
 (function() {
+var url = window.location.href
+if (!/http[s]?:\/\/.*backlog.jp\/view.*/.test(url)) {
+    return;
+}
+
 var key = $('div#issuecard div.key strong').text()
 
 var title = $('div#issuecard h4.summary').text()
 var spChars = { '[': '(', ']': ')' };
 var titleEscaped = title.replace(/[\[\]]/g, function(c) { return spChars[c] })
 
-var url = window.location.href
 var hashIndex = url.indexOf('#')
 if (hashIndex != -1) url = url.substr(0, hashIndex)
 
