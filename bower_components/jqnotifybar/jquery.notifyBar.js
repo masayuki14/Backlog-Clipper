@@ -35,7 +35,7 @@
             onHide         : null,
             position       : 'top'
         }, options);
-        
+
         // Use these methods as private.
         this.fn.showNB = function () {
             if (typeof settings.onBeforeShow === 'function') {
@@ -100,8 +100,8 @@
             default:
                 asTime = settings.animationSpeed;
         }
-        $("body").prepend(bar);
-        
+        $("header#global").prepend(bar);
+
         // Style close button in CSS file
         if (settings.close) {
             // If close settings is true. Set delay to one billion seconds.
@@ -113,7 +113,7 @@
                 bar.hideNB();
             });
         }
-            
+
         // Check if we've got any visible bars and if we have,
         // slide them up before showing the new one
         if ($('.jquery-notify-bar:visible').length > 0) {
@@ -123,7 +123,7 @@
         } else {
             bar.showNB();
         }
-        
+
         // Allow the user to click on the bar to close it
         if (settings.closeOnClick) {
             bar.click(function () {
@@ -137,11 +137,11 @@
                 bar.hideNB();
             });
         }
-             
+
         setTimeout(function () {
             bar.hideNB(settings.delay);
         }, settings.delay + asTime);
-        
+
         if (settings.position === 'bottom') {
             bar.addClass('bottom');
         } else if (settings.position === 'top') {
