@@ -1,6 +1,6 @@
 {
   "name": "Backlog Clipper",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 2,
   "description": "開いてるBacklogの課題からmd形式のlistタグを生成する",
 
