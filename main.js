@@ -1,4 +1,3 @@
-(function() {
 var key = $('div#issuecard div.key strong').text()
 
 var title = $('div#issuecard h4.summary').text()
@@ -25,7 +24,6 @@ $('.flash_message').css({
   'line-height': '3em',
   'font-weight': 'bold'
 })
-})()
 
 function saveToClipboard(text) {
   var textArea = document.createElement('textarea')
