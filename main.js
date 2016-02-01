@@ -8,7 +8,13 @@ var url = window.location.href
 var hashIndex = url.indexOf('#')
 if (hashIndex != -1) url = url.substr(0, hashIndex)
 
-var text = '- [ ][' + key + ' ' + titleEscaped + '](' + url + ')'
+var checked = ' ';
+// StatusがResolved or Closed ならxにする
+if ($('div.right_content div.issue-status-4-color').length
+    || $('div.right_content div.issue-status-3-color').length) {
+  checked = 'x';
+}
+var text = '- [' + checked + '][' + key + ' ' + titleEscaped + '](' + url + ')'
 
 saveToClipboard(text)
 
