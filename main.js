@@ -14,7 +14,13 @@ if ($('div.right_content div.issue-status-4-color').length
     || $('div.right_content div.issue-status-3-color').length) {
   checked = 'x';
 }
-var text = '- [' + checked + '][' + key + ' ' + titleEscaped + '](' + url + ')'
+
+var tag = ''
+
+if (bc_type == 'todo') tag += '[' + checked + ']'
+if (bc_type == 'list') tag += '- ' + '[' + checked + ']'
+
+var text = tag + '[' + key + ' ' + titleEscaped + '](' + url + ')'
 
 saveToClipboard(text)
 
