@@ -8,7 +8,19 @@ var url = window.location.href
 var hashIndex = url.indexOf('#')
 if (hashIndex != -1) url = url.substr(0, hashIndex)
 
-var text = '- [ ][' + key + ' ' + titleEscaped + '](' + url + ')'
+var checked = ' ';
+// StatusがResolved or Closed ならxにする
+if ($('div.right_content div.issue-status-4-color').length
+    || $('div.right_content div.issue-status-3-color').length) {
+  checked = 'x';
+}
+
+var tag = ''
+
+if (bc_type == 'todo') tag += '[' + checked + ']'
+if (bc_type == 'list') tag += '- ' + '[' + checked + ']'
+
+var text = tag + '[' + key + ' ' + titleEscaped + '](' + url + ')'
 
 saveToClipboard(text)
 
