@@ -4,7 +4,7 @@ function $(id){
 
 (function (){
   $('type').value = localStorage.bc_type ? localStorage.bc_type : 'list'
-  $('save').onclick = save
+  $('type').onchange = save
 })()
 
 function save(){
